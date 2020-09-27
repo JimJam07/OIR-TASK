@@ -68,7 +68,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  background-color: #84828a;
+  background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 .social {
   display: flex;
@@ -129,4 +133,11 @@
 }
 #git:before {
   background: black;
+}
+span {
+  color: red !important;
+}
+.love {
+  margin-top: 20px;
+  color: white;
 }
