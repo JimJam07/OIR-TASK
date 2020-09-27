@@ -1,0 +1,100 @@
+.rest {
+  height: 350px;
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/binding-light.png");
+}
+.bio {
+  font-family: "Raleway";
+  height: 650px;
+  overflow: hidden;
+}
+.bio > .bio-h1,
+.works > .bio-h1 {
+  font-size: 8vw;
+  color: grey;
+  padding: 10px;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-in-out 0s forwards;
+  text-shadow: 0 13.36px 8.896px #c4b59d, 0 -2px 1px #fff;
+}
+.bio > p {
+  font-size: 6vw;
+  color: grey;
+  opacity: 0;
+  padding: 10px;
+  animation: fadeInUp 0.5s ease-in-out 1s forwards;
+}
+.bio-content {
+  border-left: solid #7d7d7d 5px;
+  position: relative;
+  left: 20px;
+  padding-top: 20px !important;
+  font-size: 2vw !important;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.bio-img {
+  float: right;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 1.5s forwards;
+  position: relative;
+  bottom: 40vh;
+  left: -10vw;
+}
+hr {
+  margin-top: 30px;
+  width: 30vh;
+  margin-left: 40vw;
+  border: none;
+  height: 10px;
+  background: linear-gradient(-135deg, #fff 5px, transparent 0) 0 5px,
+    linear-gradient(135deg, #fff 5px, #8c8c8c 0) 0 5px;
+  background-color: #fff;
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  background-size: 10px 10px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 1.5s forwards;
+}
+.works {
+  padding-top: 30px;
+}
+@media (max-width: 800px) {
+  .bio > .bio-h1,
+  .works > .bio-h1 {
+    font-size: 10vw;
+  }
+  .bio > p {
+    font-size: 8vw;
+  }
+  .bio-content {
+    font-size: 3.5vw !important;
+  }
+  .bio-img {
+    position: inherit;
+    margin-right: 20vw;
+    margin-top: 5vh;
+  }
+  hr {
+    margin-left: 25vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .bio-img {
+    position: inherit;
+    margin-right: 30vw;
+    margin-top: 5vh;
+  }
+}

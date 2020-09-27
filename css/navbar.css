@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital@1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.navbar {
+  display: flex;
+}
+.navbar-links {
+  padding: 30px;
+  text-align: left;
+}
+.logo {
+  height: 70px;
+  width: 80px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+.links > li {
+  list-style: none;
+  padding: 0 20px;
+}
+.links > li > a {
+  font-size: 1.3rem;
+  color: white;
+  font-family: "Grandstander", cursive;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.burger {
+  position: relative;
+  top: -10vh;
+  left: 40vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.burger > .line {
+  width: 40px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+.line::before,
+.line::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+.line::before {
+  transform: translateY(-16px);
+}
+.line::after {
+  transform: translateY(16px);
+}
+/* animation for burger */
+.open > .line {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.open > .line::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.open > .line::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+/* for hover */
+
+.links > li > a,
+.links > li > a:after,
+.links > li > a:before {
+  transition: all 0.25s;
+}
+.links > li > a:hover {
+  text-decoration: none;
+  color: #0000ff;
+}
+
+.links > li > a {
+  position: relative;
+}
+
+.links > li > a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: "";
+  color: transparent;
+  background: #ff0000;
+  height: 5px;
+}
+.links > li > a:hover:after {
+  width: 100%;
+}
+/* media query */
+@media (max-width: 800px) {
+  .burger {
+    display: flex;
+  }
+  .logo {
+    padding: 0;
+    height: 80px;
+    width: 100px;
+  }
+  .navbar-links {
+    position: relative;
+    top: -60px;
+    display: none;
+    opacity: 0;
+    padding: 0;
+    transition: all 1s ease;
+  }
+  .navbar {
+    align-items: center;
+    flex-direction: column;
+  }
+  .links {
+    width: 100%;
+    flex-direction: column;
+  }
+  .active {
+    display: flex;
+    opacity: 1;
+  }
+  .img {
+    height: 100px;
+    width: 130px;
+  }
+  .links > li {
+    list-style: none;
+    padding: 20px 0;
+  }
+}
+.top-container {
+  overflow: hidden;
+}

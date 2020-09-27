@@ -1,0 +1,132 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 90px;
+}
+
+.timeline::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0.4rem;
+  height: 100%;
+  background: #888;
+  z-index: 1;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "content-left image content-right";
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.item + .item {
+  margin-top: 4rem;
+}
+
+.wrap {
+  grid-area: content-left;
+  padding: 1rem;
+  max-width: 25rem;
+}
+
+.item:nth-child(even) .wrap {
+  grid-area: content-right;
+}
+
+.img {
+  width: 15rem;
+  height: 15rem;
+  background: #888;
+  border: 0.5rem solid #888;
+  border-radius: 50%;
+  grid-area: image;
+  overflow: hidden;
+}
+
+.img > img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  .img {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+/* social */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+.social {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+}
+.anchor-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+.anchor-icon > .icon {
+  position: relative;
+  color: #262626;
+  transition: 0.5s;
+  z-index: 3;
+}
+.anchor-icon:hover > .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+.anchor-icon:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.5s;
+  z-index: 2;
+}
+.anchor-icon:hover:before {
+  top: 0;
+}
+#facebook:before {
+  background: #3b5999;
+}
+#insta:before {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+#git:before {
+  background: black;
+}

@@ -1,0 +1,63 @@
+html {
+  scroll-behavior: smooth;
+}
+.top-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.unsplash.com/photo-1501471984908-815b996862f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80");
+  height: 100vh;
+}
+/* defines the animation */
+.top {
+  padding-top: 20vh;
+  text-align: center;
+  font-size: 34px;
+  color: #424243;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+}
+p.second {
+  animation-delay: 1s;
+}
+p.third {
+  animation-delay: 2s;
+}
+p.fourth {
+  animation-delay: 3s;
+}
+p.fifth {
+  animation-delay: 4s;
+}
+p.sixth {
+  animation-delay: 5s;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.anime {
+  margin: 10px 0;
+  display: inline-block;
+  font-weight: 300;
+  color: white;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0s forwards;
+}
+.emphasis {
+  color: #fb6e67 !important;
+}
+
+/* media query */
+@media (max-width: 800px) {
+  .anime {
+    font-weight: 30;
+    font-size: 1.5rem;
+  }
+}
